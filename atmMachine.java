@@ -18,9 +18,7 @@ class userBanchancesAcc
 		System.out.println("\nEnter PIN : ");
 		int pin = sc.nextInt();
 		if(pin == userPin)
-		{
-			return true;
-		}
+		{ return true; }
 		else
 		{
 			while( chances >0 && pin != userPin)
@@ -40,15 +38,14 @@ class userBanchancesAcc
 		}
 	}
 
+	
 	public static boolean checchancesAccountNumber()
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\nEnter Account Number : ");
 		int accountNo = sc.nextInt();
 		if(accountNo == userAccountNo)
-		{
-			return true;
-		}
+		{ return true; }
 		else
 		{
 			while( chances >0 && accountNo != userAccountNo)
@@ -87,9 +84,6 @@ class userBanchancesAcc
 		{
 			return false;
 		}
-
-		
-		
 	}
 }
 	
@@ -97,20 +91,19 @@ class userBanchancesAcc
 public class atmMachine extends userBanchancesAcc
 {   
 	public static void withdraw(int amount)
-	{ 
-                      
-        //checchances whether the balance is greater than or equal to the withdrawal amount  
-        if(balance >= amount)  
-        {  
-            //remove the withdrawl amount from the total balance  
-            balance = balance - amount;  
-            System.out.println("\nPlease collect your money\n");
-			transactionHist.add("Withdrawn : "+amount+" \tCurrent Balance : "+balance);
+	{    
+	        //checchances whether the balance is greater than or equal to the withdrawal amount  
+	        if(balance >= amount)  
+	        {  
+	            //remove the withdrawl amount from the total balance  
+	            balance = balance - amount;  
+	            System.out.println("\nPlease collect your money\n");
+		    transactionHist.add("Withdrawn : "+amount+" \tCurrent Balance : "+balance);
 		}
-        else  
-        {    
-            System.out.println("\nInsufficient Balance\n\n");
-        }  
+	        else  
+	        {    
+	            System.out.println("\nInsufficient Balance\n\n");
+	        }  
 	}
 	
 	
@@ -118,12 +111,13 @@ public class atmMachine extends userBanchancesAcc
 	public static void deposit(int amount)
 	{
 		//add the deposit amount to the total balanace  
-        balance = balance + amount;  
-        System.out.println("\nYour Money has been successfully depsited\n\n");
+	        balance = balance + amount;  
+	        System.out.println("\nYour Money has been successfully depsited\n\n");
 		transactionHist.add("Deposit : "+amount+" \tCurrent Balance : "+balance);
 
 	}
 
+	
 	public static void transactionHistory()
 	{
 		System.out.println("\n---- Transaction History ----\n");
@@ -140,15 +134,16 @@ public class atmMachine extends userBanchancesAcc
 	public static void checkBalance()
 	{
 		//displaying the total balance of the user  
-        System.out.println("\n\nBalance : "+balance); 
+        	System.out.println("\n\nBalance : "+balance); 
 	}
 	
-    public static void main(String args[] )  
-    {  
+	
+    	public static void main(String args[] )  
+    	{  
 		Scanner sc = new Scanner(System.in);
-        int amount;
+        	int amount;
 		System.out.println("\n--- Welcome to ATM Machine ---\n");
-        boolean loop = checchancesValidation();
+        	boolean loop = checchancesValidation();
 		
 		if( loop == false)
 		{
@@ -206,5 +201,5 @@ public class atmMachine extends userBanchancesAcc
 			}  
 		}
 		sc.close();
-    }  
+    	}  
 }  
